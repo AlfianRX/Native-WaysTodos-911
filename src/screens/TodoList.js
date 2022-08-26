@@ -6,7 +6,7 @@ import { FlatList } from "react-native-gesture-handler";
 import CategoryDrop from "../components/CategoryDrop";
 import StatusDrop from "../components/StatusDrop";
 
-export default function TodoList() {
+export default function TodoList({navigation}) {
 
     const todos = [
         {
@@ -55,13 +55,15 @@ return (
             <View className="flex-1 items-center">
                 <FlatList
                     data={todos}
-                    keyExtractor={item => item.index}
+                    key={item => item.index}
                     renderItem={({item})=>(
-                        <View className="mb-4 rounded-md border-2 border-blue-400 bg-blue-100 w-80
-                        px-4 py-4">
-                            <Text className="font-bold text-[18px] mb-3">{item.title}</Text>
-                            <Text>{item.desc}</Text>
-                        </View>
+                        
+                            <TouchableOpacity className="mb-4 rounded-md border-2 border-blue-400 bg-blue-100 w-80
+                                px-4 py-4" onPress={()=> navigation.navigate("Detail List")}>
+                                    <Text className="font-bold text-[18px] mb-3">{item.title}</Text>
+                                    <Text>{item.desc}</Text>
+                            </TouchableOpacity>                          
+                        
                     )}
                 />       
                 

@@ -2,7 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { View, Text, Image, TextInput, SafeAreaView, TouchableHighlight } from "react-native";
 
-export default function DetailList({navigation}) {
+export default function DetailList() {
 
 return (
     <View className="flex-1 bg-white">
@@ -21,7 +21,7 @@ return (
                     </View>
                     
                 </View>
-                <View className="items-center justify-center px-4 mt-9">
+                <View className="items-center justify-center px-2 mt-9">
                     <Text className="text-semibold text-indent-3 text-white">Learn Golang to improve fundamentals and familiarize with coding.
                         Advantages of Go, Go has advantages over other languages, including:
                     </Text>

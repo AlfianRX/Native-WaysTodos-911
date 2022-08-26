@@ -20,7 +20,8 @@ return (
                 placeholder="Password"/>
             </View>
 
-             <TouchableOpacity className="mb-8 rounded-md bg-red-400 w-80 items-center py-2">
+             <TouchableOpacity className="mb-8 rounded-md bg-red-400 w-80 items-center py-2"
+             onPress={()=> navigation.navigate("Todo List2")}>
                 <Text className="text-[20px] font-extrabold text-white">Login</Text>
             </TouchableOpacity>
             <Text>New Users ?
