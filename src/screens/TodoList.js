@@ -2,10 +2,30 @@ import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { View, Text, Image, TextInput, SafeAreaView } from "react-native";
 import { TouchableOpacity } from "react-native";
+import { FlatList } from "react-native-gesture-handler";
 import CategoryDrop from "../components/CategoryDrop";
 import StatusDrop from "../components/StatusDrop";
 
-export default function TodoList({navigation}) {
+export default function TodoList() {
+
+    const todos = [
+        {
+            title: 'Belajar Golang',
+            desc: 'Sinau masxeh'
+        },
+        {
+            title: 'Kerjain PR',
+            desc: 'Sinau masxeh'
+        },
+        {
+            title: 'Beli Sayur',
+            desc: 'Sinau masxeh'
+        },
+        {
+            title: 'Healing',
+            desc: 'Sinau masxeh'
+        },
+    ]
 
 return (
     <View className="flex-1 bg-white">
@@ -23,7 +43,7 @@ return (
             <View className="items-center justify-center mt-9">
                 <TextInput className="rounded-md border-2 border-gray-400/100 w-80 h-12  mb-5 px-3 bg-gray-200"
                 placeholder="Search List..."/>
-                <View className="flex flex-row">
+                <View className="flex flex-row gap-2">
                     <View>
                         <CategoryDrop/>
                     </View>
@@ -32,13 +52,20 @@ return (
                     </View>
                 </View>
             </View>
-
-             <TouchableOpacity className="mb-8 rounded-md bg-red-400 w-80 items-center py-2">
-                <Text className="text-[20px] font-extrabold text-white">Login</Text>
-            </TouchableOpacity>
-            <Text>New Users ?
-                <Text className="text-red-400 font-bold" onPress={()=> navigation.navigate("Register")}> Register</Text>
-            </Text>
+            <View className="flex-1 items-center">
+                <FlatList
+                    data={todos}
+                    keyExtractor={item => item.index}
+                    renderItem={({item})=>(
+                        <View className="mb-4 rounded-md border-2 border-blue-400 bg-blue-100 w-80
+                        px-4 py-4">
+                            <Text className="font-bold text-[18px] mb-3">{item.title}</Text>
+                            <Text>{item.desc}</Text>
+                        </View>
+                    )}
+                />       
+                
+            </View>
     </View>
     );
 }
