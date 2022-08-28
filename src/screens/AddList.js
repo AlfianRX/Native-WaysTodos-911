@@ -1,15 +1,16 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { View, Text, Image, TextInput, SafeAreaView, TouchableHighlight } from "react-native";
 import { TouchableOpacity } from "react-native";
 import CategoryDropForm from "../components/CategoryDropForm";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
 
-export default function AddList({navigation}) {
-    
 
-    const [form, setForm] = React.useState({
+//date
+export default function AddList({navigation}) {
+
+    const [form, setForm] = useState({
         title:'',
         category:'',
         date:'',
@@ -17,7 +18,7 @@ export default function AddList({navigation}) {
         status:''
     });
 
-    const [isLoading, setIsLoading] = React.useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleOnChange = (name, value) => {
         setForm({
@@ -72,7 +73,9 @@ return (
                 value={form.category}/>
 
                 <TextInput className="rounded-md border-2 border-gray-400/100 w-80 h-10 mb-5 px-3 bg-gray-200"
-                placeholder="Choose Date"/>
+                placeholder="Choose Date"
+                onChangeText={(value) => handleOnChange('date', value)}
+                value={form.date}/>
 
                 <TextInput className="rounded-md border-2 border-gray-400/100 w-80 mb-5 px-3 bg-gray-200"
                 placeholder="Description"
