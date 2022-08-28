@@ -27,10 +27,10 @@ function MyTab(){
 
                     if(route.name == "Todo List"){
                         iconName = focused ? "journal" : "journal-outline"
+                    } else if(route.name == "Add Category"){
+                        iconName = focused ? "bookmarks" : "bookmarks-outline" 
                     } else if(route.name == "Add List"){
                         iconName = focused ? "list" : "list-outline"
-                    } else if(route.name == "Add Category"){
-                        iconName = focused ? "bookmarks" : "bookmarks-outline"
                     }
 
                     return <Ionicons name={iconName} size={20} color="red"/>
@@ -41,8 +41,8 @@ function MyTab(){
         }
         >
             <Tab.Screen name="Todo List" component={TodoList}/>
-            <Tab.Screen name="Add List" component={AddList}/>
             <Tab.Screen name="Add Category" component={AddCategory}/>
+            <Tab.Screen name="Add List" component={AddList}/>
 
         </Tab.Navigator>
     )

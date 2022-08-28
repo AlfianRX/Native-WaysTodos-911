@@ -27,6 +27,8 @@ export default function TodoList({navigation}) {
         },
     ]
 
+    
+
 return (
     <View className="flex-1 bg-white">
         <StatusBar/>
