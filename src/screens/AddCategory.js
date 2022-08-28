@@ -81,7 +81,7 @@ export default function AddCategory({navigation}) {
 
     React.useEffect(()=> {
         getData()
-    },[])
+    },[data])
 
     // const _categoryRender = ({ item })=>{
     //     return (

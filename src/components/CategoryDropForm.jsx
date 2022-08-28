@@ -37,17 +37,11 @@ import axios from "axios";
       
       React.useEffect(()=> {
         getData()
-      },[])
+      },[data])
       // const stamp = res.data.title
       const datas = data.map((item) => {
         return {label: item.title, value: item.title}
       })
-
-    // [
-    //   { label: 'Study', value: 'Study' },
-    // { label: 'Shoping', value: 'Shopping'},
-    // { label: 'Chores', value: 'Chores' },
-    // ];
 
     const [value, setValue] = useState(null);
     const [isFocus, setIsFocus] = useState(false);
@@ -57,8 +51,6 @@ import axios from "axios";
       }
       return null;
     };
-
-    
 
     return (
       <View >
