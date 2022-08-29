@@ -55,12 +55,19 @@ export default function AddList({navigation}) {
             setIsLoading(false)
         }
     }
+    const handleLogout = async() => {
+        await AsyncStorage.removeItem('token');
+        navigation.navigate("Login")
+    }
+
 
 return (
     <View className="flex-1 bg-white">
         <StatusBar/>
             <View className="mt-11 mx-9 flex flex-row">
-                <Text className="text-[25px] font-bold">Add List</Text>  
+                <Text className="text-[25px] font-bold">Add List</Text>
+                <Text onPress={handleLogout} className="bg-red-500 rounded-md px-2 py-1 text-white font-bold absolute top-3 right-4">
+                Logout</Text>
             </View>
             <View className="items-center justify-center mt-9">
                 <TextInput className="rounded-md border-2 border-gray-400/100 w-80 h-10 mb-5 px-3 bg-gray-200"
@@ -71,6 +78,7 @@ return (
                 <CategoryDropForm
                 onChangeText={(value) => handleOnChange('category', value)}
                 value={form.category}/>
+                                      
 
                 <TextInput className="rounded-md border-2 border-gray-400/100 w-80 h-10 mb-5 px-3 bg-gray-200"
                 placeholder="Choose Date"

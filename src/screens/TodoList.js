@@ -27,8 +27,7 @@ export default function TodoList({navigation}) {
         },
     ]
 
-    
-
+   
 return (
     <View className="flex-1 bg-white">
         <StatusBar/>
@@ -62,6 +61,13 @@ return (
                         
                             <TouchableOpacity className="mb-4 rounded-md border-2 border-blue-400 bg-blue-100 w-80
                                 px-4 py-4" onPress={()=> navigation.navigate("Detail List")}>
+                                    <Text className="bg-blue-500 rounded-md 
+                                        px-2 py-1 text-white font-bold 
+                                        absolute top-3 right-4">
+                                        Study</Text>
+                                    <Image className="rounded-full bg-white absolute top-11 right-4"
+                                        source={{uri:'https://res.cloudinary.com/alfiancloud/image/upload/v1661524163/waystodo/Vector_slaxjp.png'}}
+                                        style={{width:30,height:30}}/>
                                     <Text className="font-bold text-[18px] mb-3">{item.title}</Text>
                                     <Text>{item.desc}</Text>
                             </TouchableOpacity>                          

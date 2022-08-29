@@ -55,7 +55,7 @@ import axios from "axios";
     return (
       <View >
         {renderLabel()}
-        <Dropdown  className="rounded-md border-2 border-gray-400/100 w-40 h-12  mb-5 px-3 bg-gray-200"
+        <Dropdown className="rounded-md border-2 border-gray-400/100 w-40 h-12  mb-5 px-3 bg-gray-200"
           data={datas}
           search
           maxHeight={300}
